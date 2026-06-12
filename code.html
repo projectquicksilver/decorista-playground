@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Antique Collection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Lora:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            antique: {
+              bg: '#dfd7ce', // Main light background
+              dark: '#2d251d', // Dark brown background for sections
+              gold: '#c79d63', // Accent gold/tan color for text and buttons
+              border: '#c79d63', // Border color
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            body: ['"Lora"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-utilities">
+    /* Subtle texture overlay could be added here if needed, keeping it clean for now */
+    .ornamental-divider {
+      background-image: url('data:image/svg+xml;utf8,<svg width="100" height="20" viewBox="0 0 100 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10H40C40 10 45 5 50 5C55 5 60 10 60 10H100" stroke="%23c79d63" stroke-width="1"/></svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 20px;
+      width: 100%;
+    }
+    
+    .ornamental-corner {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border: 1px solid #c79d63;
+    }
+    .corner-tl { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+    .corner-tr { top: 10px; right: 10px; border-left: none; border-bottom: none; }
+    .corner-bl { bottom: 10px; left: 10px; border-right: none; border-top: none; }
+    .corner-br { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+    
+    /* Decorative flourish icon */
+    .flourish-icon {
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+      background-image: url('data:image/svg+xml;utf8,<svg width="40" height="20" viewBox="0 0 40 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 5C15 5 10 10 5 10C10 10 15 15 20 15C25 15 30 10 35 10C30 10 25 5 20 5Z" fill="%23c79d63"/></svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="bg-antique-bg text-antique-dark font-body p-4 md:p-8 min-h-screen">
+<main class="max-w-[1200px] mx-auto space-y-4">
+<!-- BEGIN: Hero Section -->
+<section class="relative bg-antique-dark rounded-md overflow-hidden flex flex-col md:flex-row h-auto md:h-[500px]" data-purpose="hero-section">
+<!-- Decorative Corners -->
+<div class="hidden md:block ornamental-corner corner-tl rounded-tl-lg"></div>
+<div class="hidden md:block ornamental-corner corner-bl rounded-bl-lg"></div>
+<!-- Hero Content -->
+<div class="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center items-start text-white relative z-10">
+<div class="w-full text-center md:text-left mb-6">
+<span class="flourish-icon mx-auto md:mx-0 mb-2"></span>
+</div>
+<h1 class="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight mb-2 uppercase tracking-wide text-center md:text-left w-full">
+          Antique<br/>Collection
+        </h1>
+<p class="font-serif italic text-xl md:text-2xl text-gray-300 mb-6 text-center md:text-left w-full">
+          Timeless Pieces, Crafted by History
+        </p>
+<div class="w-full flex justify-center md:justify-start mb-6">
+<div class="w-32 border-t border-antique-gold/50"></div>
+</div>
+<p class="text-sm md:text-base text-gray-300 mb-8 max-w-sm text-center md:text-left w-full mx-auto md:mx-0">
+          Curated antiques that bring character, charm &amp; elegance to your space.
+        </p>
+<div class="w-full flex justify-center md:justify-start">
+<button class="bg-antique-gold hover:bg-yellow-600 text-antique-dark font-bold py-3 px-8 text-sm tracking-wider uppercase transition-colors">
+            Explore Now
+          </button>
+</div>
+</div>
+<!-- Hero Image (Using the provided combined image as a background/cover for the right side) -->
+<div class="w-full md:w-1/2 h-64 md:h-full relative overflow-hidden">
+<img alt="Vintage Clocks" class="absolute inset-0 w-full h-full object-cover object-[right_top]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8UxlNM8VJkP9wRMw-RnN8nkgPRhnnCdys5vVfrG6pAVc_QZDXynCYUUnKrSOxVIzp8uwN3MlEke6f162cn-r-9JgT-LnG3Zwc0HH6ioViTRI80xCTpTNe9FiVi8-IIv9T7T3nm_fSp81VUAigIjtVtlvmtQXhJ2Lu5tTQ1efiGAMkUnHtCeKKDiW0ZXWwueA4EvVm_Zxb_nth2FlMpIZKyvWoDddRLxr3YZLp9ApQO0uz0Uq1aroIoEfyneS81zOoejKgs1GxOeE"/>
+<!-- Gradient overlay to blend image into background on smaller screens -->
+<div class="absolute inset-0 bg-gradient-to-t from-antique-dark via-transparent to-transparent md:bg-gradient-to-l md:from-transparent md:via-transparent md:to-antique-dark"></div>
+</div>
+</section>
+<!-- END: Hero Section -->
+<!-- BEGIN: Three Column Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4 h-auto md:h-[400px]" data-purpose="features-grid">
+<!-- Feature 1: Echoes of Elegance -->
+<article class="bg-antique-dark text-white rounded-md flex overflow-hidden relative group">
+<div class="w-1/2 p-6 flex flex-col justify-center z-10">
+<h2 class="font-serif text-3xl mb-4 leading-tight">Echoes of<br/>Elegance</h2>
+<div class="w-12 border-t border-antique-gold/50 mb-4"></div>
+<p class="text-sm text-gray-300">From music to memories—discover antiques that speak to the soul.</p>
+</div>
+<div class="w-1/2 relative">
+<!-- Using a cropped section of the main image as a placeholder for the specific item -->
+<img alt="Gramophone" class="absolute inset-0 w-full h-full object-cover object-[left_center] opacity-80 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8UxlNM8VJkP9wRMw-RnN8nkgPRhnnCdys5vVfrG6pAVc_QZDXynCYUUnKrSOxVIzp8uwN3MlEke6f162cn-r-9JgT-LnG3Zwc0HH6ioViTRI80xCTpTNe9FiVi8-IIv9T7T3nm_fSp81VUAigIjtVtlvmtQXhJ2Lu5tTQ1efiGAMkUnHtCeKKDiW0ZXWwueA4EvVm_Zxb_nth2FlMpIZKyvWoDddRLxr3YZLp9ApQO0uz0Uq1aroIoEfyneS81zOoejKgs1GxOeE"/>
+<div class="absolute inset-0 bg-gradient-to-r from-antique-dark to-transparent"></div>
+</div>
+</article>
+<!-- Feature 2: Decor with History -->
+<article class="bg-[#f0eadd] text-antique-dark rounded-md p-8 flex flex-col justify-center items-center text-center relative border border-antique-gold/30">
+<!-- Inner Border -->
+<div class="absolute inset-2 border border-antique-gold/20 rounded-sm pointer-events-none"></div>
+<!-- Decorative Corners for Inner Border -->
+<div class="absolute top-2 left-2 w-2 h-2 border-t border-l border-antique-gold/50"></div>
+<div class="absolute top-2 right-2 w-2 h-2 border-t border-r border-antique-gold/50"></div>
+<div class="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-antique-gold/50"></div>
+<div class="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-antique-gold/50"></div>
+<span class="flourish-icon mb-4 opacity-70"></span>
+<h2 class="font-serif text-4xl mb-4 leading-tight">Decor<br/>with<br/>History</h2>
+<div class="w-16 border-t border-antique-gold mb-4"></div>
+<p class="text-sm">Add a touch of heritage to your home with our handpicked antique treasures.</p>
+</article>
+<!-- Feature 3: Timeless Beauty -->
+<article class="bg-antique-dark text-white rounded-md flex flex-row-reverse overflow-hidden relative group">
+<div class="w-1/2 p-6 flex flex-col justify-center z-10">
+<h2 class="font-serif text-3xl mb-4 leading-tight">Timeless<br/>Beauty.<br/>Lasting<br/>Impression.</h2>
+<div class="w-12 border-t border-antique-gold/50 mb-4"></div>
+<p class="text-sm text-gray-300">Antiques that never go out of style.</p>
+</div>
+<div class="w-1/2 relative">
+<!-- Using a cropped section of the main image as a placeholder -->
+<img alt="Brass Vases" class="absolute inset-0 w-full h-full object-cover object-[right_center] opacity-80 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8UxlNM8VJkP9wRMw-RnN8nkgPRhnnCdys5vVfrG6pAVc_QZDXynCYUUnKrSOxVIzp8uwN3MlEke6f162cn-r-9JgT-LnG3Zwc0HH6ioViTRI80xCTpTNe9FiVi8-IIv9T7T3nm_fSp81VUAigIjtVtlvmtQXhJ2Lu5tTQ1efiGAMkUnHtCeKKDiW0ZXWwueA4EvVm_Zxb_nth2FlMpIZKyvWoDddRLxr3YZLp9ApQO0uz0Uq1aroIoEfyneS81zOoejKgs1GxOeE"/>
+<div class="absolute inset-0 bg-gradient-to-l from-antique-dark to-transparent"></div>
+</div>
+</article>
+</section>
+<!-- END: Three Column Grid -->
+<!-- BEGIN: Full Width Feature -->
+<section class="bg-antique-dark rounded-md overflow-hidden flex flex-col md:flex-row h-auto md:h-[400px]" data-purpose="full-width-feature">
+<!-- Image Left -->
+<div class="w-full md:w-1/3 h-64 md:h-full relative">
+<img alt="Hourglasses and Elephants" class="absolute inset-0 w-full h-full object-cover object-[left_bottom]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8UxlNM8VJkP9wRMw-RnN8nkgPRhnnCdys5vVfrG6pAVc_QZDXynCYUUnKrSOxVIzp8uwN3MlEke6f162cn-r-9JgT-LnG3Zwc0HH6ioViTRI80xCTpTNe9FiVi8-IIv9T7T3nm_fSp81VUAigIjtVtlvmtQXhJ2Lu5tTQ1efiGAMkUnHtCeKKDiW0ZXWwueA4EvVm_Zxb_nth2FlMpIZKyvWoDddRLxr3YZLp9ApQO0uz0Uq1aroIoEfyneS81zOoejKgs1GxOeE"/>
+<div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-transparent to-antique-dark"></div>
+</div>
+<!-- Content Center -->
+<div class="w-full md:w-1/3 p-8 md:p-12 flex flex-col justify-center items-center text-center text-white z-10 bg-antique-dark">
+<h2 class="font-serif text-4xl md:text-5xl mb-6 leading-tight">Stories.<br/>Crafted.<br/>Curated.</h2>
+<span class="flourish-icon mb-6"></span>
+<p class="text-base text-gray-300 mb-2">Every piece has a past.</p>
+<p class="text-base text-gray-300 mb-8">Every piece has a purpose.<br/>Find yours today.</p>
+<button class="bg-antique-gold hover:bg-yellow-600 text-antique-dark font-bold py-3 px-8 text-sm tracking-wider uppercase transition-colors">
+          Shop Antiques
+        </button>
+</div>
+<!-- Image Right -->
+<div class="w-full md:w-1/3 h-64 md:h-full relative">
+<img alt="Miniature Instruments" class="absolute inset-0 w-full h-full object-cover object-[right_bottom]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8UxlNM8VJkP9wRMw-RnN8nkgPRhnnCdys5vVfrG6pAVc_QZDXynCYUUnKrSOxVIzp8uwN3MlEke6f162cn-r-9JgT-LnG3Zwc0HH6ioViTRI80xCTpTNe9FiVi8-IIv9T7T3nm_fSp81VUAigIjtVtlvmtQXhJ2Lu5tTQ1efiGAMkUnHtCeKKDiW0ZXWwueA4EvVm_Zxb_nth2FlMpIZKyvWoDddRLxr3YZLp9ApQO0uz0Uq1aroIoEfyneS81zOoejKgs1GxOeE"/>
+<div class="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-l from-transparent to-antique-dark"></div>
+</div>
+</section>
+<!-- END: Full Width Feature -->
+<!-- BEGIN: Trust Badges Footer -->
+<footer class="border-t border-antique-dark/20 pt-6 mt-8 pb-4" data-purpose="trust-badges">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm text-antique-dark">
+<!-- Badge 1 -->
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 border border-antique-dark rounded-full flex items-center justify-center flex-shrink-0">
+<!-- Simple Star Icon SVG -->
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+<div>
+<h4 class="font-bold uppercase tracking-wide text-xs mb-1">Handpicked</h4>
+<p class="text-xs text-antique-dark/70">Unique &amp; Authentic<br/>Antiques</p>
+</div>
+</div>
+<!-- Badge 2 -->
+<div class="flex items-center space-x-3 md:border-l md:border-antique-dark/20 md:pl-6">
+<div class="w-10 h-10 flex items-center justify-center flex-shrink-0">
+<!-- House/Gift Icon SVG -->
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+<div>
+<h4 class="font-bold uppercase tracking-wide text-xs mb-1">Perfect For</h4>
+<p class="text-xs text-antique-dark/70">Home, Office &amp;<br/>Gifting</p>
+</div>
+</div>
+<!-- Badge 3 -->
+<div class="flex items-center space-x-3 md:border-l md:border-antique-dark/20 md:pl-6">
+<div class="w-10 h-10 flex items-center justify-center flex-shrink-0">
+<!-- Gift Box Icon SVG -->
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+<div>
+<h4 class="font-bold uppercase tracking-wide text-xs mb-1">Timeless</h4>
+<p class="text-xs text-antique-dark/70">Pieces that Never<br/>Go Out of Style</p>
+</div>
+</div>
+<!-- Badge 4 -->
+<div class="flex items-center space-x-3 md:border-l md:border-antique-dark/20 md:pl-6">
+<div class="w-10 h-10 border border-antique-dark rounded-full flex items-center justify-center flex-shrink-0">
+<!-- Shield/Check Icon SVG -->
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+<div>
+<h4 class="font-bold uppercase tracking-wide text-xs mb-1">Quality</h4>
+<p class="text-xs text-antique-dark/70">Crafted to Last<br/>Generations</p>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: Trust Badges Footer -->
+</main>
+</body></html>
